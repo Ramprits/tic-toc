@@ -1,14 +1,18 @@
 import React, { ReactElement } from 'react'
-import { TouchableOpacity } from 'react-native'
-import { Text } from '@components'
+import { TouchableOpacity, TouchableOpacityProps } from 'react-native'
+import Text from '../Text'
 import styles from './button.styles'
 
-const Button = (): ReactElement => {
-    return (
-        <TouchableOpacity style={styles.button} onPress={() => alert('Hi')}>
-            <Text weight='700'> Single Player</Text>
-        </TouchableOpacity>
-    )
+type HomeProps = {
+  title: string
+} & TouchableOpacityProps
+
+const Button = ({ title, style, ...props }: HomeProps): ReactElement => {
+  return (
+    <TouchableOpacity {...props} style={[styles.button, style]}>
+      <Text weight='700'> {title}</Text>
+    </TouchableOpacity>
+  )
 }
 
 export default Button

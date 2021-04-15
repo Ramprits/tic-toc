@@ -11,4 +11,5 @@ export default StyleSheet.create({
         maxWidth: '60%',
         resizeMode: 'contain',
     },
+    button: { marginBottom: 20 },
 })
